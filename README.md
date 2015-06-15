@@ -4,10 +4,10 @@ This is my first github test directory
 # Description
 To test git commands
 
-    add
+    git add
     
-    commit
+    git commit
     
-    push
+    git push
     
-    remote
+    git remote
