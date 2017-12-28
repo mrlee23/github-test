@@ -4,14 +4,8 @@ notifications:
 language: node_js
 node_js:
     - "8"
-#before_script:
-#    - bash ./build.sh
-ache:
+before_script:
+    - bash ./build.sh
+cache:
     directories:
         - "node_modules"
-deploy:
-    provider: pages
-    skip_celanup: true
-    github_token: $G
-    on:
-        branch: master

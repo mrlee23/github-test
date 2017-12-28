@@ -1,6 +1,8 @@
+git config --global user.email "mrlee_23@naver.com"
+git config --global user.name "mrlee23"
 rm -rf ../.published
 npm run doc
-git checkout origin/gh-pages -b gh-pages
+git checkout -b gh-pages
 git pull
 mv ../.published/* ./
 git add -f .
