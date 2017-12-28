@@ -1,0 +1,25 @@
+{
+  "name": "github-test",
+  "version": "1.0.0",
+  "description": "This is my first github test directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc index.js -t ./node_modules/minami -d .published"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrlee23/github-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrlee23/github-test/issues"
+  },
+  "homepage": "https://github.com/mrlee23/github-test#readme",
+  "dependencies": {
+    "ink-docstrap": "^1.3.2",
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3"
+  }
+}
