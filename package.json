@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "doc": "jsdoc index.js -t ./node_modules/minami -d ${PUBLISHED_DIR}"
+    "doc": "jsdoc *.js -t ./node_modules/minami -d ${PUBLISHED_DIR}"
   },
   "repository": {
     "type": "git",
