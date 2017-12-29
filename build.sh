@@ -4,12 +4,9 @@ if [ -z "${BUILD_BRANCH}" ]; then BUILD_BRANCH="gh-pages"; fi
 if [ -z "${PUBLISHED_DIR}" ]; then PUBLISHED_DIR=".published"; fi
 if [ -z "${COMMIT_MSG}" ]; then COMMIT_MSG=$(git log --oneline -n 1 --pretty="Deploy: %s from %h"); fi
 git checkout --orphan $BUILD_BRANCH
-#git rm -rf .
 git pull origin $BUILD_BRANCH
 shopt -s extglob
-ls -alh
 rm -rf !(.git|$PUBLISHED_DIR)
-ls -alh
 mv -f "${PUBLISHED_DIR}"/* ./
 git add ./
 git commit -a -m "${COMMIT_MSG}"
