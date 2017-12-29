@@ -1,6 +1,6 @@
 env:
     global:
-        - ABCD="ABCDEFGH"
+        - GH_TOKEN=$G
 notifications:
     email:
         - mrlee_23@naver.com
