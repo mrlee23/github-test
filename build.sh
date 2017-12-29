@@ -6,7 +6,10 @@ if [ -z "${COMMIT_MSG}" ]; then COMMIT_MSG=$(git log --oneline -n 1 --pretty="De
 git checkout --orphan $BUILD_BRANCH
 git rm -rf .
 git pull origin $BUILD_BRANCH
+echo "git add ${PUBLISHED_DIR}"
 git add $PUBLISHED_DIR
+echo "git mv -f ${PUBLISHED_DIR}/* ./"
 git mv -f "${PUBLISHED_DIR}/*" ./
+echo "git commit -a -m ${COMMIT_MSG}"
 git commit -a -m $COMMIT_MSG
 test $? -eq "0" && git push $REPO $BUILD_BRANCH > /dev/null 2>&1
