@@ -1,12 +1,12 @@
-git config --global user.email "mrlee_23@naver.com"
-git config --global user.name "mrlee23"
-rm -rf ./.published
-npm run doc
-git checkout --orphan gh-pages
+if [ -z "${GH_TOKEN}" ]; then "GH_TOKEN is not setted" 1>&2; fi
+if [ -z "${REPO}" ]; then REPO=$(sed "s/https:\/\/github.com/https:\/\/${GH_TOKEN}@github.com/g" <<< $(git config remote.origin.url)); fi
+if [ -z "${BUILD_BRANCH}" ]; then BUILD_BRANCH="gh-pages"; fi
+if [ -z "${PUBLISHED_DIR}" ]; then HTML_DIR="./.published"; fi
+if [ -z "${COMMIT_MSG}" ]; then COMMIT_MSG=$(git log --oneline -n 1 --pretty="Deploy: %s from %h"); fi
+git checkout --orphan $BUILD_BRANCH
 git rm -rf .
-git pull origin gh-pages
-git add ./.published
-git mv -f ./.published/* ./
-git commit -a -m "Deploy: $(git log --oneline -n 1)"
-test $? -eq "0" && git push "https://${GH_TOKEN}@github.com/mrlee23/github-test.git" gh-pages > /dev/null 2>&1
-git checkout master
+git pull origin $BUILD_BRANCH
+git add $PUBLISHED_DIR
+git mv -f "${PUBLISHED_DIR}/*" ./
+git commit -a -m $COMMIT_MSG
+test $? -eq "0" && git push $REPO $BUILD_BRANCH > /dev/null 2>&1
