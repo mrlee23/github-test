@@ -12,5 +12,5 @@ rm -rf !(.git|$PUBLISHED_DIR)
 ls -alh
 mv -f "${PUBLISHED_DIR}"/* ./
 git add ./
-git commit -m $COMMIT_MSG
+git commit -a -m "${COMMIT_MSG}"
 test $? -eq "0" && git push $REPO $BUILD_BRANCH > /dev/null 2>&1
