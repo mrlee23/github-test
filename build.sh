@@ -8,7 +8,7 @@ git checkout --orphan $BUILD_BRANCH
 git pull origin $BUILD_BRANCH
 #shopt -s extglob
 #rm -rf !($PUBLISHED_DIR)
-rm rm -rf .
+rm -rf .
 mv -f "${PUBLISHED_DIR}/*" ./
 git add ./
 git commit -a -m $COMMIT_MSG
