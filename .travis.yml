@@ -9,15 +9,15 @@ language: node_js
 node_js:
   - "8"
 before_script:
+  - which make
+  - ls /bin
+  - ls /usr/bin
+  - ls /usr/local/bin
   - git config --global user.email "mrlee_23@naver.com"
   - git config --global user.name "mrlee23"
   - npm run doc
   - bash ./build.sh
   - git checkout master
-  - which make
-  - ls /bin
-  - ls /usr/bin
-  - ls /usr/local/bin
 cache:
   directories:
       - "node_modules"
