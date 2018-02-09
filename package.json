@@ -4,7 +4,7 @@
   "description": "This is my first github test directory",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "doc": "jsdoc *.js -t ./node_modules/minami -d ${PUBLISHED_DIR}"
   },
   "repository": {
