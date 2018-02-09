@@ -6,6 +6,8 @@ env:
   global:
       - GH_TOKEN=$G
       - PUBLISHED_DIR=".published"
+language: node_js
+node_js: 8
 services:
   - docker
 deploy:
